@@ -1,5 +1,5 @@
 {% set name = "napari-script-editor" %}
-{% set version = "0.2.7" %}
+{% set version = "0.2.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/napari-script-editor-{{ version }}.tar.gz
-  sha256: df2d1cda6b9a20185a71a6ae0c24cbfe8f7d5d779e5213d3b4d9c07a1130876f
+  sha256: 77f1b3e145005b783f239cd0971978a114f26b3ca5c280bed6baf5228f9355ad
 
 build:
   noarch: python
