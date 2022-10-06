@@ -27,6 +27,8 @@ requirements:
     - napari-tools-menu
     - numpy
     - python >=3.7
+    - pyflakes <=2.4.0
+    - imageio !=2.22.1
 
 test:
   imports:
