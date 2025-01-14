@@ -6,18 +6,18 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/napari-script-editor-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/napari-script-editor-{{ version }}.tar.gz
   sha256: c89dd6032f7571b549f23fc98ff3b393085c096a966fffebcaade0931de28398
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
   run:
     - haesleinhuepf-pyqode.core >=2.15.5
     - haesleinhuepf-pyqode.python >=2.15.2
@@ -26,7 +26,7 @@ requirements:
     - napari-plugin-engine >=0.1.4
     - napari-tools-menu
     - numpy
-    - python >=3.7
+    - python >={{ python_min }}
     - pyflakes <=2.4.0
     - imageio !=2.22.1
 
@@ -38,6 +38,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/haesleinhuepf/napari-script-editor
